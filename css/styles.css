@@ -1,26 +1,22 @@
+body {
+    background: #6695f2;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #ddd59e, #6695f2);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #ddd59e, #6695f2);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
 .header {
-  padding: 20px;
+    padding-top: 20px;
+    margin-bottom: -22px;
 }
 
 .add {
-  margin-top: 26%;
-  margin-right: 15px;
+    margin-top: 26%;
+    margin-right: 15px;
 }
 
-.navbar {
-  background-color: #3F5496;
-  text-transform: uppercase;
-  color: #ffffff;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-}
-
-.navbar-default .navbar-brand {
-  color: #ffffff;
-  font-weight: bold;
-}
-
-/* Disabling default Bootstrap navbar collapse behavior */
 @media(max-width:767px) {
     /*Bootstrap XS size*/
     .add {
@@ -28,23 +24,100 @@
     }
 }
 
+i {
+    color: #FCFBF0;
+}
+
+.navbar {
+    background-color: #3F5496;
+    text-transform: uppercase;
+    color: #ffffff;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border: 1px solid #3F5496;
+}
+
+.navbar-default .navbar-brand {
+    color: #ffffff;
+    font-weight: bold;
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+.navbar-default .navbar-brand:hover {
+    color: #ffffff;
+}
+
+.form-control {
+    padding: 6px 35px;
+    border: 0;
+    border-radius: 0;
+    background-color: #D3DFF4;
+    color: #293960;
+    font-style: italic;
+    font-size: 1.25em;
+    height: 60px;
+}
+
+hr {
+    margin: 0;
+    border: 0;
+    height: 3px;
+    background-image: -webkit-linear-gradient(left, #D3DFF4, #3F5496, #D3DFF4);
+    background-image: -moz-linear-gradient(left, #D3DFF4, #3F5496, #D3DFF4);
+    background-image: -ms-linear-gradient(left, #D3DFF4, #3F5496, #D3DFF4);
+    background-image: -o-linear-gradient(left, #D3DFF4, #3F5496, #D3DFF4);
+}
+
+ul {
+    padding-left: 0px;
+}
+
+li {
+    padding: 4px 0;
+    list-style-type: none;
+    background-color: #FCFBF0;
+}
+
+li:nth-child(even) {
+    background-color: #F2ECD6;
+}
+
+.delete {
+  background-color: #dbc023;
+  color: #ffffff;
+  padding: 6px 8px 6px 8px;
+}
+
+.todoItem {
+  padding: 6px 0 6px 35px;
+}
+
+.complete {
+  text-decoration: line-through;
+}
+
+/* Disabling default Bootstrap navbar collapse behavior */
+
 .navbar-collapse.collapse {
-  display: block!important;
+    display: block!important;
 }
 
 .navbar-nav>li, .navbar-nav {
-  float: left !important;
+    float: left !important;
 }
 
 .navbar-nav.navbar-right:last-child {
-  margin-right: -15px !important;
+    margin-right: -15px !important;
 }
 
 .navbar-right {
-  float: right!important;
+    float: right!important;
 }
 
 .navbar-header:after {
-  clear: none;
+    clear: none;
 }
+
+
 /* Disabling Bootstrap navbar collapse behavior */
