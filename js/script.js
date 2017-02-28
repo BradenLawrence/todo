@@ -1,8 +1,14 @@
 // Initialize list
 let todo = {
   list: [],
+  interface: $(".listArea"),
+  display: function(object) {
+    this.interface.append("<li><span class=\"delete\"><i class=\"fa fa-minus-circle\" aria-hidden=\"true\"></i></span><span class=\"todoItem\">" + object.text + "</span></li>")
+  },
   add: function(text) {
-    this.list.push(new todoItem(text))
+    let item = new todoItem(text)
+    this.list.push(item)
+    this.display(item)
   }
 }
 
