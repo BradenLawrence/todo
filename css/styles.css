@@ -17,6 +17,10 @@ body {
     margin-right: 15px;
 }
 
+.add:hover {
+    cursor: pointer;
+}
+
 @media(max-width:767px) {
     /*Bootstrap XS size*/
     .add {

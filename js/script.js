@@ -3,9 +3,7 @@ let add = $(".add")
 let formControl = $(".form-control")
 
 add.click(function(){
-  formControl.slideUp(function(){
-    formControl.remove()
-  })
+  formControl.slideToggle(200)
 })
 
 // Pressing "Enter" on entry form creates a new todo item with the form's current text
