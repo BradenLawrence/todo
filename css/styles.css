@@ -101,6 +101,10 @@ li:nth-child(even) {
   text-decoration: line-through;
 }
 
+.hidden {
+  display:none;
+}
+
 /* Disabling default Bootstrap navbar collapse behavior */
 
 .navbar-collapse.collapse {
