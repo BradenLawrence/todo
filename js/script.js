@@ -19,7 +19,14 @@ let todo = {
         $(id).click(function() {
             $(id).toggleClass("complete")
         })
-    },
+        // Mouse hover on todo item toggles delete button visibility
+        $(id).hover(function() {      // Mouse enter
+                        $(id).children("span.delete").toggleClass("hidden")
+                    },
+                    function() {      // Mouse leave
+                        $(id).children("span.delete").toggleClass("hidden")
+                    })
+    }
 }
 
 const todoItem = function(text) {
@@ -41,7 +48,7 @@ formControl.keypress(function(event) {
     }
 })
 
-// Mouse hover on todo item toggles delete button visibility
+
 
 
 
