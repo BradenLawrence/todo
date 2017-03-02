@@ -26,6 +26,12 @@ let todo = {
                     function() {      // Mouse leave
                         $(id).children("span.delete").toggleClass("hidden")
                     })
+        // Mouse click on delete button removes todo item
+        $(id).children("span.delete").click(function() {
+            $(id).slideUp(200, function() {
+                  $(id).remove()
+            })
+        })
     }
 }
 
@@ -47,9 +53,3 @@ formControl.keypress(function(event) {
         todo.add(formControl.val())
     }
 })
-
-
-
-
-
-// Mouse click on delete button removes todo item
