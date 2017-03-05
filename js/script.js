@@ -10,7 +10,7 @@ let todo = {
         // this.display(newestID)   // Add the item we just created to the display list
     },
     display: function(num, text) {
-        this.interface.append("<li id=\"todo" + num +  "\"><span class=\"delete hidden\"><i class=\"fa fa-minus-circle\" aria-hidden=\"true\"></i></span><span class=\"todoItem\">" + text + "</span></li>")
+        this.interface.append("<li id=\"todo" + num + "\"><span class=\"delete hidden\"><i class=\"fa fa-minus-circle\" aria-hidden=\"true\"></i></span><span class=\"todoItem\">" + text + "</span></li>")
         this.addListeners(num)
     },
     addListeners: function(num) {
@@ -21,17 +21,17 @@ let todo = {
             todo.list[num].setStatus("complete")
         })
         // Mouse hover on todo item toggles delete button visibility
-        $(id).hover(function() {      // Mouse enter
-                        $(id).children("span.delete").toggleClass("hidden")
-                    },
-                    function() {      // Mouse leave
-                        $(id).children("span.delete").toggleClass("hidden")
-                    })
+        $(id).hover(function() { // Mouse enter
+                $(id).children("span.delete").toggleClass("hidden")
+            },
+            function() { // Mouse leave
+                $(id).children("span.delete").toggleClass("hidden")
+            })
         // Mouse click on delete button removes todo item
         $(id).children("span.delete").click(function() {
             $(id).slideUp(200, function() {
-                  $(id).remove()
-                  todo.list[num].setStatus("removed")
+                $(id).remove()
+                todo.list[num].setStatus("removed")
             })
         })
     }
@@ -44,7 +44,7 @@ const todoItem = function(text) {
     this.id = todoCounter
     todoCounter++
     this.setStatus = function(text) {
-        if(text === "complete" || text === "incomplete" || text === "removed") {
+        if (text === "complete" || text === "incomplete" || text === "removed") {
             this.status = text
         }
     }
@@ -67,14 +67,22 @@ formControl.keypress(function(event) {
 })
 
 // Clicking on the entry form clears default text
+let defaultTextValue = "Enter your task..."
+
 formControl.focusin(function() {
-    formControl.val("")
+    if (formControl.val() === defaultTextValue) {
+        formControl.val("")
+        formControl.removeClass("defaultText")
+    }
 })
 
 formControl.focusout(function() {
-    initializeForm()
+    if (formControl.val() === "") { // Don't revert to default text if the user has started typing something.
+        initializeForm()
+    }
 })
 
 const initializeForm = function() {
-    formControl.val("Enter your task...")
+    formControl.val(defaultTextValue)
+    formControl.addClass("defaultText")
 }

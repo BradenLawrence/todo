@@ -105,6 +105,10 @@ li:nth-child(even) {
   display:none;
 }
 
+.defaultText {
+  color: #949CAF;
+}
+
 /* Disabling default Bootstrap navbar collapse behavior */
 
 .navbar-collapse.collapse {
