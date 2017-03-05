@@ -52,8 +52,12 @@ add.click(function() {
 // Pressing "Enter" on entry form creates a new todo item with the form's current text
 formControl.keypress(function(event) {
     if (event.which === 13) { //13 === the 'Enter' key
+        if(formControl.val() === "") {
+            // Do nothing, cannot submit a blank todoItem
+        } else {
         todo.add(formControl.val())
         formControl.val("")
+      }
     }
 })
 
@@ -77,3 +81,4 @@ const initializeForm = function() {
     formControl.val(defaultTextValue)
     formControl.addClass("defaultText")
 }
+initializeForm()
