@@ -91,6 +91,21 @@ li:nth-child(even) {
   background-color: #dbc023;
   color: #ffffff;
   padding: 6px 8px 6px 8px;
+  margin-left: -10px;
+  display: inline-block;
+  opacity: 0;
+  width: 1px;
+  transition: .2s ease-in-out;
+}
+
+li:hover {
+  cursor: pointer;
+}
+
+li:hover .delete {
+  margin-left: 0;
+  opacity: 1;
+  width: 28px;
 }
 
 .todoItem {
@@ -99,10 +114,6 @@ li:nth-child(even) {
 
 .complete {
   text-decoration: line-through;
-}
-
-.hidden {
-  display:none;
 }
 
 .defaultText {
